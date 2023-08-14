@@ -1,0 +1,58 @@
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Loading...</p>
+
+</ngx-spinner>
+{{registration| json}}
+<div class="container" style="color: green;">{{message}}</div>
+<div class="container" style=" margin-left: 800px; margin-top: 20px;">
+  <label for="cars">Choose a Student List:</label>
+
+<select *ngIf="showOnlyDropdown" name="cars" id="cars">
+
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+</div>
+<div *ngIf="!showOnlyDropdown" class="container">
+<form>
+  <label style="color: red;">Username</label>
+<input type="text" name="name" [(ngModel)]="registrationDTO.name" class="form-control"  style="width: 40%;"><br>
+<label  style="color: red;">Email</label>
+<input type="text" name="email" [(ngModel)]="registrationDTO.email" class="form-control"  style="width: 40%;" ><br>
+<label  style="color: red;">Phone</label>
+<input type="text" name="phone" [(ngModel)]="registrationDTO.phone"  class="form-control"  style="width: 40%;"><br>
+<label  style="color: red;">Address</label>
+<input type="text" name="address" [(ngModel)]="registrationDTO.address" class="form-control"  style="width: 40%;"><br>
+<label  style="color: red;">Batch</label>
+<input type="text" name="batch" [(ngModel)]="registrationDTO.batch" class="form-control"  style="width: 40%;"><br>
+<label  style="color: red;">Course</label>
+<input type="text" name="course" [(ngModel)]="registrationDTO.course" class="form-control"  style="width: 40%;"><br>
+<label  style="color: red;">TypeOfclass</label>
+<input type="text" name="typeOfclass" [(ngModel)]="registrationDTO.typeOfclass" class="form-control"  style="width: 40%;"><br>
+<label  style="color: red;">Sessions</label>
+<input type="text" name="sessions" [(ngModel)]="registrationDTO.sessions" class="form-control"  style="width: 40%;"><br>
+<label  style="color: red;">Queries</label>
+<input type="text" name="queries" [(ngModel)]="registrationDTO.queries" class="form-control"  style="width: 40%;"><br>
+<button type="submit" (click)="create()" class="btn btn-primary">save</button>
+<a routerLink="signup"><button type="submit"  class="btn btn-primary">showData</button></a>
+</form>
+{{message}}
+</div>
+<!--
+<app-login   [itemData]="data"  (select)="message=$event"></app-login>
+<a routerLink="home">home</a> -->
+<div class="container" style="color: red; margin-left: 200px;">
+  {{ids}} {{names}}
+</div>
+<div (click)="showEvents()" class="container" style="color: red; margin-left: 200px;">
+<div (click)="showEventChild()">
+ <button class="btn btn-primary">showEventChild</button>
+</div>
+</div>
+
+<div class="container">
+  {{showEvent}}
+</div>

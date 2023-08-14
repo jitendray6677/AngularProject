@@ -1,0 +1,80 @@
+
+
+<div class="container" style="color: green;" >{{status}}</div>
+<div class="container">
+<form *ngIf="!showtable">
+  <label style="color: red;">USERNAME</label>&nbsp;&nbsp;
+  <input type="text" [(ngModel)]="username" name="username"><br><br>
+  <label  style="color: red;">PASSWORD</label>&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="text" [(ngModel)]="password"  name="password"><br><br>
+  <button type="submit" class="btn btn-primary" style="margin-left: 100px;" (click)="showData()">submit</button>
+
+</form></div>
+<br><br>
+
+<!-- <div class="container">
+<a routerLink="/login"><button class="btn btn-primary">login</button></a>&nbsp;
+<a routerLink="/home"><button class="btn btn-success">Home</button></a></div> -->
+<div class="container">
+  <button class="btn btn-primary" (click)="findAll()">getData</button>
+</div>
+<div class="container" >
+  <table class="table">
+    <thead>
+      <tr >
+
+
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>address</th>
+        <th>batch</th>
+        <th>course</th>
+        <th>Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let std of registration">
+
+
+        <td >{{std.id}}</td>
+        <td>{{std.name}}</td>
+        <td >{{std.email}}</td>
+        <td>{{std.phone}}</td>
+        <td>{{std.address}}</td>
+        <td >{{std.batch}}</td>
+        <td>{{std.course}}</td>
+         <td><button><h4 (click)="deleteData(std.id)">delete</h4></button></td>
+         <td><button class="btn btn-primary" (click)="deletemodal(std)">deletemodal</button></td>
+
+      </tr>
+
+    </tbody>
+  </table>
+  <button routerLink="registration">add</button>
+</div>
+
+
+<app-registration *ngIf="registration" [showOnlyDropdown]="true" [registration]="registration"></app-registration>
+<div class="container">
+  <div class="cm-card" style="margin-top: 20px; margin-left: 100px;">
+  <ul class="no-style">
+    <li class="d-flex  align-items-center w-100">
+      <div class="w-40">Name</div>
+      <div class="w-30">Email</div>
+      <div class="w-10" >Address</div>
+    </li>
+  </ul>
+</div>
+</div>
+<div class="container">
+<button (click)="showModal=true">showModal</button>
+</div>
+<div class="container">
+  <a [href]="'registration?id=1&name=jitendra'">routeLink</a>
+</div>
+<div class="container">
+  <h1 *ngFor="let item of listData"></h1>
+</div>

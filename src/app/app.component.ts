@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularWebProject';
+
+// result : any;
+//   add(h?:any){
+//     this.result= this.title;
+//     return this.result + h;
+//   }
 }

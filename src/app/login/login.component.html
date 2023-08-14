@@ -1,0 +1,29 @@
+
+<button (click)="tested('angular data')">output</button>
+<div class="container" >
+  <table class="table">
+    <thead>
+      <tr >
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let std of studentData">
+
+        <td > {{std.id}}</td>
+        <td [ngStyle]="{'color' : std.name ?'red': 'green'}">{{std.name}}</td>
+        <td>{{std.email}}</td>
+        <td>update</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+{{itemData}}
+
+<div class="container">
+<button (click)="sum(10,20)">sum</button>
+{{result}}</div>
